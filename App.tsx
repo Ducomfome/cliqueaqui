@@ -7,6 +7,17 @@ const App: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({ minutes: 4, seconds: 59 });
   const [spotsLeft, setSpotsLeft] = useState(14);
 
+  // Define o slug da URL para /Brasil ao carregar para fins de trackamento
+  useEffect(() => {
+    const targetSlug = '/Brasil';
+    // Verifica se o caminho atual já não é o slug desejado
+    // Preserva query params (ex: ?utm_source=...) e hash se existirem
+    if (window.location.pathname !== targetSlug) {
+      const newUrl = targetSlug + window.location.search + window.location.hash;
+      window.history.replaceState(null, '', newUrl);
+    }
+  }, []);
+
   // Timer countdown logic to create urgency
   useEffect(() => {
     const timer = setInterval(() => {
