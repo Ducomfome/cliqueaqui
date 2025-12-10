@@ -30,7 +30,7 @@ const App: React.FC = () => {
     return () => clearInterval(spotTimer);
   }, []);
 
-  const telegramLink = "https://t.me/+ZWJgZ0ojKgwwN2U5";
+  const telegramLink = "https://t.me/+UfIF_BU6VXtiYTlh";
 
   return (
     <div className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center overflow-hidden">
